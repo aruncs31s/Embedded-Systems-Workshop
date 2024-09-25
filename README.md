@@ -31,11 +31,36 @@ void loop(){
 
 ```mermaid
 flowchart TD
-
+    AAA[Start] --> A
     A[Initialize Serial Communication] --> AA[Initialize the Pin]
-    AA  --> B{Read The Pin Value}
+    AA  --> B{Check the Pin Value}
     B -->|High| C[Object Detected]
-    C --> D[Check Again]
+    C --o D[(Check Again)]
     D --> B
     B ---->|LOW| E[Object Not Detected]
+    E --> D
+```
+
+2. ESP32_LED_analog_brightness
+
+```c
+void setup() {
+}
+
+void loop() {
+for(int dcy=0; dcy<255; dcy++)
+{
+  analogWrite(5, dcy);
+  analogWrite(18, dcy);
+  analogWrite(19, dcy);
+  delay(5);
+}
+for(int dcy=255; dcy>0; dcy--)
+{
+  analogWrite(5, dcy);
+  analogWrite(18, dcy);
+  analogWrite(19, dcy);
+  delay(5);
+}
+}
 ```
