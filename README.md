@@ -27,6 +27,105 @@ If this option is not in the window for some reason then click on the profile ic
 
 ## Programs
 
+### Day 1
+
+1. Led Blink
+
+```c
+void setup(){
+pinMode(D2,OUTPUT)
+}
+void loop(){
+  digitalWrite(D2,HIGH);
+  delay(1000);
+  digitalWrite(D2,LOW);
+  delay(1000);
+}
+```
+
+2. Led Blink With Switch
+
+```c
+bool status=0;
+void setup(){
+  pinMode(D2,OUTPUT);
+  pinMode(D4,INPUT);
+}
+void loop(){
+  status = digitalRead(D4);
+  if (status == HIGH){
+    digitalWrite(D2,HIGH);
+  }
+  else{
+    digitalWrite(D2,LOW);
+  }
+  delay(1000);
+}
+```
+
+3. Toggle LED
+
+```c
+bool status=0;
+void setup(){
+  pinMode(D2,OUTPUT);
+  pinMode(D4,INPUT);
+}
+void loop(){
+  if (digitalRead(D4) == HIGH){
+    digitalWrite(D2,(status ^= 1));
+  }
+  delay(50);
+}
+```
+
+Explanation :
+
+```c
+ if (digitalRead(D4) == HIGH){
+    digitalWrite(D2,(status ^= 1));
+  }
+```
+
+- First checks if the input is \*_HIGH(3.3V Logic 1)_ or not
+- If `HIGH` the conditional statement's body will get executed
+
+```c
+digitalWrite(D2,(status ^= 1));
+```
+
+This line writes `HIGH` if the value of `staus` is `LOW` then toggles the
+`status` using `status ^= 1` which performs the following operation
+
+$$
+\text{status} \xor \text{status}
+$$
+
+4. adding Debugging Capabilities to LED Contorl
+
+```c
+bool status=0;
+void setup(){
+  Serial.begin(115200);
+  pinMode(D2,OUTPUT);
+  pinMode(D4,INPUT);
+}
+void loop(){
+  status = digitalRead(D4);
+  if (status == HIGH){
+    digitalWrite(D2,HIGH);
+    Serial.println("LED HIGH");
+  }
+  else{
+    digitalWrite(D2,LOW);
+    Serial.println("LED LOW");
+  }
+  delay(1000);
+}
+```
+
+### Day 2
+
 <!-- Source : Embedded Systems Workshop by Sajesh Kumar U -->
 
 1. IR Sensor Interfacing
