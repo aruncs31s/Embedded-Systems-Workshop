@@ -98,10 +98,10 @@ This line writes `HIGH` if the value of `staus` is `LOW` then toggles the
 `status` using `status ^= 1` which performs the following operation
 
 $$
-\text{status} \oplus \text{status}
+\text{status} \oplus 1
 $$
 
-4. adding Debugging Capabilities to LED Contorl
+`xor` ing a number with `1` will invert its value just like `not` operation 4. adding Debugging Capabilities to LED Contorl
 
 ```c
 bool status=0;
