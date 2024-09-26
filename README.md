@@ -101,7 +101,9 @@ $$
 \text{status} \oplus 1
 $$
 
-`xor` ing a number with `1` will invert its value just like `not` operation 4. adding Debugging Capabilities to LED Contorl
+`xor` ing a number with `1` will invert its value just like `not` operation
+
+4. adding Debugging Capabilities to LED Contorl
 
 ```c
 bool status=0;
