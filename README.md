@@ -2,6 +2,29 @@
 
 Embedded Systems Workshop by Dr.Sajesh Kumar U
 
+## How to create a new github project
+
+1. Go to [Github.com](www.gihub.com)
+   ![](./Images/1.png?raw=true)
+2. Click on `Sign in`
+
+![](./Images/2.png?raw=true)
+
+3. Click on Create a new and create a new one
+
+![](./Images/3.png?raw=true) 4. After Creating account Click on `New`
+If this option is not in the window for some reason then click on the profile icon and select `Your Repocitories`
+
+![](./Images/4.png?raw=true)
+
+5. Give This new project any title like for example `Embedded-Systems-Workshop`
+
+![](./Images/5.png?raw=true)
+
+6. Now you are ready to upload some code
+
+![](./Images/6.png?raw=true)
+
 ## Programs
 
 <!-- Source : Embedded Systems Workshop by Sajesh Kumar U -->
